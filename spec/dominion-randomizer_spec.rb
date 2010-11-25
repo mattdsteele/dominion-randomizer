@@ -1,22 +1,9 @@
-class Randomizer
-  def random_cards
-    [{},
-    {}]
-  end
-
-  def get_random_cards
-    random_cards.sort_by {rand}
-  end
-end
-
-class Card
-  
-end
-
+require 'randomizer'
 describe "Card" do
-  it "can be constructed" do
-    card = Card.new
-    card.should_not.nil?
+  it "has specific attributes" do
+    card = make_card("Gold", 6, "Base")
+    card[:name].should == "Gold"
+    card[:set].should == "Base"
   end
 end
 
@@ -37,7 +24,7 @@ describe "Randomizer" do
     randomizer = Randomizer.new
     first_cards = randomizer.get_random_cards
     second_cards = randomizer.get_random_cards
-    first_cards.object_id.should_not === second_cards.object_id
+    first_cards.object_id.should_not == second_cards.object_id
   end
 
   it "should only contain the objects from random_cards" do
@@ -45,5 +32,11 @@ describe "Randomizer" do
     cards = randomizer.random_cards
     random_set = randomizer.get_random_cards
     random_set.each {|i| cards.should include(i) }
+  end
+
+  it "should contain exactly 10 cards" do
+    randomizer = Randomizer.new
+    cards = randomizer.get_random_cards
+    cards.size.should == 10
   end
 end
