@@ -1,14 +1,11 @@
 class Randomizer
-  def random_cards
-    cards = []
-    10.times do
-      cards << {}
-    end
-    cards
+
+  def initialize(cards)
+    @cards = cards
   end
 
   def get_random_cards
-    random_cards.sort_by {rand}
+    @cards.sort_by {rand}[1..10]
   end
 end
 
