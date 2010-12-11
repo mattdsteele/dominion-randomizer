@@ -12,3 +12,13 @@ end
 def make_card(name, cost, set)
   {:name => name, :cost => cost, :set => set}
 end
+
+class SetRule
+  def initialize(*set)
+    @sets = set
+  end
+
+  def passes(card)
+    @sets.include? card[:set] 
+  end
+end
