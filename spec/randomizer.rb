@@ -1,3 +1,5 @@
+require 'json'
+
 class Randomizer
 
   def initialize(cards)
@@ -21,4 +23,8 @@ class SetRule
   def passes(card)
     @sets.include? card[:set] 
   end
+end
+
+def convert_json(cards)
+  JSON.generate({:cards => cards})
 end

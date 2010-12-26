@@ -3,7 +3,7 @@
   <head>
     <title>Dominion Randomizer</title>
   </head>
-  <link rel="stylesheet" href="jqm/jquery.mobile-1.0a3pre.css" />
+  <link rel="stylesheet" href="jqm/jquery.mobile-1.0a3pre.min.css" />
   <script src="http://code.jquery.com/jquery-1.4.4.min.js"></script>
   <script src="randomizer.js"></script>
   <script src="jqm/jquery.mobile-1.0a3pre.min.js"></script>
@@ -11,37 +11,24 @@
     .ui-li-divider, .ui-li-static { padding: .2em }
   </style>
   <body>
+
     <div data-role="page"> 
       <div data-role="header">
-        <h1>Title</h1>
+        <h1>Randomizer</h1>
       </div>
       <div data-role="content">
-        <p><a href="#cards" id="cardslink">Cards</a></p>
+        <button id="ib">Do Something</button>
       </div>
     </div>
+
     <div data-role="page" id="cards"> 
       <div data-role="header">
-        <h1>Title</h1>
-        <a href="#" class="ui-btn-right" data-icon="refresh">Refresh</a>
+        <h1>Results</h1>
+        <a href="#" id="refresh" class="ui-btn-right" data-icon="refresh">Reshuffle</a>
       </div>
       <div data-role="content">
         <ul id="lists" data-role="listview">
-          <li data-role="list-divider">Base</li>
-          <li id="item">One (6)</li>
-          <li>Two (4)</li>
-          <li>Three (2)</li>
-          <li data-role="list-divider">Intrigue</li>
-          <li>Four</li>
-          <li>Five</li>
-          <li data-role="list-divider">Alchemy</li>
-          <li>Six</li>
-          <li>Seven</li>
-          <li data-role="list-divider">Seaside</li>
-          <li>Eight</li>
-          <li>Nine</li>
-          <li data-role="list-divider">Prosperity</li>
-          <li>Ten</li>
-        </ul>
+       </ul>
       </div>
     </div>
 

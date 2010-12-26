@@ -8,18 +8,19 @@ describe "Card" do
   end
 end
 
+def random_cards
+  cards = []
+  15.times do |i|
+    cards << make_card("something #{i}", 2, "base")
+  end
+  cards
+end
+
 describe "Randomizer" do
   before :each do
     @randomizer = Randomizer.new(random_cards)
   end
 
-  def random_cards
-    cards = []
-    15.times do |i|
-      cards << make_card("something #{i}", 2, "base")
-    end
-    cards
-  end
 
   it "can be constructed" do
     @randomizer.should_not == nil
@@ -69,5 +70,22 @@ describe "SetRule" do
     passing_cards = cards.select {|card| rule.passes(card)}
     passing_cards.size.should == 2
     passing_cards.each {|card| card[:name].should == "included" }
+  end
+end
+
+describe "JsonConverter" do
+  it "can serialize an empty cardset" do
+    card = []
+    JSON.generate({:cards => card}).should == "{\"cards\":[]}"
+  end
+
+  it "can serialize a single card" do
+    card = make_card("Gold", 6, "base")
+    convert_json([ card ]).should == '{"cards":[{"name":"Gold","cost":6,"set":"base"}]}'
+  end
+
+  it "can serialize multiple cards" do
+    cards = [ make_card("Silver", 3, "base"), make_card("Copper", 0, "base")]
+    convert_json(cards).should == '{"cards":[{"name":"Silver","cost":3,"set":"base"},{"name":"Copper","cost":0,"set":"base"}]}'
   end
 end
