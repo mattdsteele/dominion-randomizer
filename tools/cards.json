@@ -670,8 +670,6 @@
     "rules clarification": "When you play this, you get an extra coin to spend this turn, and may buy an additional card in your Buy phase. When you discard this from play (usually during Clean-up), you may choose a Treasure card you have in play, and put that card on your deck. If you have no cards in your deck, that Treasure will become the only card in your deck. You choose what order to discard cards during Clean-up; so, for example, if you have Herbalist, Potion, and Alchemist in play, you could choose to discard Alchemist first, putting it on top of your deck, then discard Herbalist, and put Potion on top of your deck. If you have multiple Herbalists in play, each one will let you put another Treasure from play onto your deck when you discard it."
   },
   {
-  },
-  {
     "card": "Hoard",
     "set": "Prosperity",
     "type": [
@@ -853,14 +851,6 @@
     ],
     "text": "Now and at the start of your next turn",
     "rules clarification": "You get 2 coins to spend this turn, and 2 more on your next turn. Leave this in front of you until the Clean-up phase of your next turn."
-  },
-  {
-  },
-  {
-  },
-  {
-  },
-  {
   },
   {
     "card": "Militia",
@@ -1178,12 +1168,6 @@
     ],
     "text": "+3 Cards. Each other player reveals the top 3 cards of his deck, discards the revealed Actions and Treasures, and puts the rest back on top in any order he chooses.",
     "rules clarification": "The other players shuffle if necessary to get 3 cards to reveal, and just reveal what they can if they still have fewer than 3 cards. They discard revealed Treasures and Actions and put the rest back on top in whatever order they want. Cards with more than one type match all of their types; for example if a player reveals Nobles from Dominion"
-  },
-  {
-  },
-  {
-  },
-  {
   },
   {
     "card": "Remodel",

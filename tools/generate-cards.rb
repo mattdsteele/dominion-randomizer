@@ -28,6 +28,8 @@ cards = file.split(/^$/).collect do |card|
   c
 end
 
+cards.delete_if {|x| x == {}}
+
 as_json = cards.to_json
 
 File.open('cards.json', 'w').puts(as_json)
