@@ -1,3 +1,13 @@
+def convert_money(cost)
+  cost.split('+').map do |x|
+    if (x =~ /\d*P$/)
+      ["potion", x.sub(/P/,'')]
+    else
+      ["coin",x]
+    end
+  end
+end
+
 require 'json'
 file = IO.read('dominion-cardlist.txt')
 cards = file.split(/^$/).collect do |card|
@@ -6,10 +16,13 @@ cards = file.split(/^$/).collect do |card|
   c = {}
   split_arr = lines.map do |line|
     type,element = line.split(': ')
-    if type == "Type"
-      c[type.downcase.strip] = element.split('-').map {|x| x.strip}
+    type = type.downcase.strip
+    if type == "type"
+      c[type] = element.split('-').map {|x| x.strip}
+    elsif type == "cost" then
+      c[type] = convert_money(element)
     else
-      c[type.downcase.strip] = element.strip unless element == nil
+      c[type] = element.strip unless element == nil
     end
   end
   c
