@@ -18,6 +18,7 @@ stringize = function(entry) {
 }
 
 $(document).ready(function() {
+  $('#lists').listview();
   $('#ib').click(function() {
     populateData(data);
     $.mobile.changePage('cards');
