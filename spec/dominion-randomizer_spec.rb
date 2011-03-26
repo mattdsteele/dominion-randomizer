@@ -5,6 +5,7 @@ describe "Card" do
     card = make_card("Gold", 6, "Base")
     card[:name].should == "Gold"
     card[:set].should == "Base"
+    card[:cost].should == {:coin => 6, :potion => 0}
   end
 end
 
@@ -81,11 +82,6 @@ describe "JsonConverter" do
 
   it "can serialize a single card" do
     card = make_card("Gold", 6, "base")
-    convert_json([ card ]).should == '{"cards":[{"name":"Gold","cost":6,"set":"base"}]}'
-  end
-
-  it "can serialize multiple cards" do
-    cards = [ make_card("Silver", 3, "base"), make_card("Copper", 0, "base")]
-    convert_json(cards).should == '{"cards":[{"name":"Silver","cost":3,"set":"base"},{"name":"Copper","cost":0,"set":"base"}]}'
+    convert_json([ card ]).should == '{"cards":[{"name":"Gold","cost":{"coin":6,"potion":0},"set":"base"}]}'
   end
 end

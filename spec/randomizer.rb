@@ -12,7 +12,7 @@ class Randomizer
 end
 
 def make_card(name, cost, set)
-  {:name => name, :cost => cost, :set => set}
+  {:name => name, :cost => {:coin => cost, :potion => 0}, :set => set}
 end
 
 class SetRule
